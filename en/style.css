@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
 
 :root {
-  --primary-gold: #D4AF37;
-  --primary-gold-light: #E8C968;
-  --dark-bg: #0A0A0A;
+  --primary-gold: #d4af37;
+  --primary-gold-light: #e8c968;
+  --dark-bg: #0a0a0a;
   --dark-surface: #151515;
-  --dark-elevated: #1E1E1E;
-  --text-primary: #F5F5F5;
-  --text-secondary: #B8B8B8;
-  --text-muted: #6B6B6B;
-  --accent-gradient: linear-gradient(135deg, #D4AF37 0%, #E8C968 100%);
+  --dark-elevated: #1e1e1e;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b8b8b8;
+  --text-muted: #6b6b6b;
+  --accent-gradient: linear-gradient(135deg, #d4af37 0%, #e8c968 100%);
 }
 
 * {
@@ -23,7 +23,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-primary);
   line-height: 1.6;
@@ -86,7 +86,7 @@ header ul a {
 }
 
 header ul a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -111,7 +111,7 @@ select {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   transition: all 0.3s ease;
 }
 
@@ -131,14 +131,30 @@ section {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-section:nth-child(1) { animation-delay: 0.2s; }
-section:nth-child(2) { animation-delay: 0.4s; }
-section:nth-child(3) { animation-delay: 0.6s; }
-section:nth-child(4) { animation-delay: 0.8s; }
-section:nth-child(5) { animation-delay: 1s; }
-section:nth-child(6) { animation-delay: 1.2s; }
-section:nth-child(7) { animation-delay: 1.4s; }
-section:nth-child(8) { animation-delay: 1.6s; }
+section:nth-child(1) {
+  animation-delay: 0.2s;
+}
+section:nth-child(2) {
+  animation-delay: 0.4s;
+}
+section:nth-child(3) {
+  animation-delay: 0.6s;
+}
+section:nth-child(4) {
+  animation-delay: 0.8s;
+}
+section:nth-child(5) {
+  animation-delay: 1s;
+}
+section:nth-child(6) {
+  animation-delay: 1.2s;
+}
+section:nth-child(7) {
+  animation-delay: 1.4s;
+}
+section:nth-child(8) {
+  animation-delay: 1.6s;
+}
 
 @keyframes fadeInUp {
   from {
@@ -159,15 +175,23 @@ section:nth-child(8) { animation-delay: 1.6s; }
   align-items: center;
   text-align: center;
   min-height: 90vh;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(212, 175, 55, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(212, 175, 55, 0.05) 0%,
+      transparent 50%
+    ),
     var(--dark-bg);
   position: relative;
 }
 
 #Home::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -178,7 +202,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #Home h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
   background: var(--accent-gradient);
@@ -209,7 +233,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 .about-title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
   color: var(--primary-gold);
   margin-bottom: 3rem;
@@ -218,7 +242,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 .about-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -242,7 +266,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #Services h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
   color: var(--primary-gold);
   margin-bottom: 3rem;
@@ -269,13 +293,18 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #Services li::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 175, 55, 0.1),
+    transparent
+  );
   transition: left 0.6s ease;
 }
 
@@ -290,7 +319,8 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 /* Car Sections */
-#Citroen-DS, #Nissan-NV300 {
+#Citroen-DS,
+#Nissan-NV300 {
   background: var(--dark-surface);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -299,21 +329,24 @@ section:nth-child(8) { animation-delay: 1.6s; }
   border-top: 1px solid rgba(212, 175, 55, 0.1);
 }
 
-#Citroen-DS p, #Nissan-NV300 p {
+#Citroen-DS p,
+#Nissan-NV300 p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
 }
 
-#Citroen-DS strong, #Nissan-NV300 strong {
-  font-family: 'Playfair Display', serif;
+#Citroen-DS strong,
+#Nissan-NV300 strong {
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   color: var(--primary-gold);
   display: block;
   margin-bottom: 1rem;
 }
 
-#Citroen-DS img, #Nissan-NV300 img {
+#Citroen-DS img,
+#Nissan-NV300 img {
   width: 100%;
   height: auto;
   border-radius: 12px;
@@ -322,7 +355,8 @@ section:nth-child(8) { animation-delay: 1.6s; }
   border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-#Citroen-DS img:hover, #Nissan-NV300 img:hover {
+#Citroen-DS img:hover,
+#Nissan-NV300 img:hover {
   transform: scale(1.03);
 }
 
@@ -340,7 +374,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #Nissan-NV300 li::before {
-  content: '●';
+  content: "●";
   position: absolute;
   left: 0;
   color: var(--primary-gold);
@@ -352,7 +386,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #Cancellation-Policy h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary-gold);
   margin-bottom: 2rem;
@@ -387,7 +421,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #FAQ h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary-gold);
   margin-bottom: 3rem;
@@ -425,7 +459,7 @@ section:nth-child(8) { animation-delay: 1.6s; }
 }
 
 #Contact h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
   color: var(--primary-gold);
   margin-bottom: 2rem;
@@ -434,6 +468,37 @@ section:nth-child(8) { animation-delay: 1.6s; }
 #Contact p {
   font-size: 1.2rem;
   color: var(--text-secondary);
+}
+
+#Contact ul {
+  list-style: none;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+#Contact li {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--dark-surface);
+  border-left: 4px solid var(--primary-gold);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+#Contact li:hover {
+  background: var(--dark-elevated);
+  transform: translateX(10px);
+}
+
+#Contact li a {
+  color: var(--primary-gold);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#Contact li a:hover {
+  color: var(--primary-gold-light);
 }
 
 /* Responsive Design */
@@ -452,7 +517,8 @@ section:nth-child(8) { animation-delay: 1.6s; }
     padding: 3rem 5%;
   }
 
-  #Citroen-DS, #Nissan-NV300 {
+  #Citroen-DS,
+  #Nissan-NV300 {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -478,7 +544,9 @@ section:nth-child(8) { animation-delay: 1.6s; }
 .fade-in-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .fade-in-on-scroll.visible {
