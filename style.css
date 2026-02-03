@@ -1,35 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary-gold: #D4AF37;
+  --primary-gold-light: #E8C968;
+  --dark-bg: #0A0A0A;
+  --dark-surface: #151515;
+  --dark-elevated: #1E1E1E;
+  --text-primary: #F5F5F5;
+  --text-secondary: #B8B8B8;
+  --text-muted: #6B6B6B;
+  --accent-gradient: linear-gradient(135deg, #D4AF37 0%, #E8C968 100%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 5%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #f8f8f8;
-  border-bottom: 2px solid #e7e7e7;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 header img {
-  width: 150px;
-  height: 100px;
+  height: 50px;
+  width: auto;
+  filter: brightness(1.2);
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
 }
 
 header ul {
-  list-style: none;
   display: flex;
-  margin: 0;
-  padding: 0;
+  gap: 2.5rem;
+  list-style: none;
 }
 
 header ul a {
+  color: var(--text-secondary);
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  margin: 0 15px;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: relative;
   transition: color 0.3s ease;
+}
+
+header ul a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-gradient);
+  transition: width 0.4s ease;
+}
+
+header ul a:hover {
+  color: var(--primary-gold);
+}
+
+header ul a:hover::after {
+  width: 100%;
+}
+
+select {
+  background: var(--dark-elevated);
+  color: var(--text-primary);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: var(--primary-gold);
+}
+
+/* Main Content */
+main {
+  padding-top: 100px;
+}
+
+section {
+  min-height: 60vh;
+  padding: 5rem 10%;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.2s; }
+section:nth-child(2) { animation-delay: 0.4s; }
+section:nth-child(3) { animation-delay: 0.6s; }
+section:nth-child(4) { animation-delay: 0.8s; }
+section:nth-child(5) { animation-delay: 1s; }
+section:nth-child(6) { animation-delay: 1.2s; }
+section:nth-child(7) { animation-delay: 1.4s; }
+section:nth-child(8) { animation-delay: 1.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Home Section */
+#Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 90vh;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+    var(--dark-bg);
+  position: relative;
+}
+
+#Home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(212,175,55,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+#Home h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 600;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+}
+
+#Home p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+/* About Section */
+#About {
+  background: var(--dark-surface);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--primary-gold);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  background: var(--accent-gradient);
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  max-width: 900px;
+  font-weight: 300;
+}
+
+/* Services Section */
+#Services {
+  background: var(--dark-bg);
+}
+
+#Services h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--primary-gold);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#Services ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#Services li {
+  background: var(--dark-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#Services li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+#Services li:hover::before {
+  left: 100%;
+}
+
+#Services li:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-gold);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* Car Sections */
+#Citroen-DS, #Nissan-NV300 {
+  background: var(--dark-surface);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+#Citroen-DS p, #Nissan-NV300 p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+#Citroen-DS strong, #Nissan-NV300 strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--primary-gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#Citroen-DS img, #Nissan-NV300 img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+#Citroen-DS img:hover, #Nissan-NV300 img:hover {
+  transform: scale(1.03);
+}
+
+#Nissan-NV300 ul {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding-left: 0;
+}
+
+#Nissan-NV300 li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+#Nissan-NV300 li::before {
+  content: '●';
+  position: absolute;
+  left: 0;
+  color: var(--primary-gold);
+}
+
+/* Cancellation Policy */
+#Cancellation-Policy {
+  background: var(--dark-bg);
+}
+
+#Cancellation-Policy h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary-gold);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#Cancellation-Policy ul {
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#Cancellation-Policy li {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--dark-surface);
+  border-left: 4px solid var(--primary-gold);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+#Cancellation-Policy li:hover {
+  background: var(--dark-elevated);
+  transform: translateX(10px);
+}
+
+/* FAQ Section */
+#FAQ {
+  background: var(--dark-surface);
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+#FAQ h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary-gold);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#FAQ ul {
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#FAQ li {
+  padding: 1rem 0;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+#FAQ strong {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Contact Section */
+#Contact {
+  background: var(--dark-bg);
+  text-align: center;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#Contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--primary-gold);
+  margin-bottom: 2rem;
+}
+
+#Contact p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+
+  header ul {
+    gap: 1.5rem;
+  }
+
+  section {
+    padding: 3rem 5%;
+  }
+
+  #Citroen-DS, #Nissan-NV300 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #Services ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  header ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  #Home {
+    padding: 3rem 5%;
+  }
+}
+
+/* Scroll Animations */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
