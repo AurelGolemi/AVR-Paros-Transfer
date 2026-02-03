@@ -43,4 +43,24 @@ window.addEventListener("DOMContentLoaded", () => {
       // On mobile, let the default mailto handler work (opens Gmail app or email client)
     });
   }
+
+  // Handle mobile menu toggle
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = navMenu.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+      });
+    });
+  }
 });
