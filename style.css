@@ -69,6 +69,13 @@ header img:hover {
   transform: scale(1.05);
 }
 
+@media (max-width: 640px) {
+  header img {
+    height: 70px;
+    width: 70px;
+  }
+}
+
 header ul {
   display: flex;
   gap: 2.5rem;
