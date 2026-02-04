@@ -206,7 +206,7 @@ section:nth-child(8) {
   text-align: center;
   min-height: 90vh;
   background:
-    url('Public/Paros_Island/Paros_4.jpeg') no-repeat center center/cover;
+    url('../Public/Paros_Island/Paros_4.jpeg') no-repeat center center/cover;
   position: relative;
 }
 
