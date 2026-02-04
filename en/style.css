@@ -229,7 +229,7 @@ section:nth-child(8) {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
-  background: var(--accent-gradient);
+  background: var(--primary-gold);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -237,6 +237,8 @@ section:nth-child(8) {
   letter-spacing: -1px;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))
+          drop-shadow(0 0 15px rgba(0, 0, 0, 0.2));
 }
 
 #Home p {
@@ -247,6 +249,8 @@ section:nth-child(8) {
   letter-spacing: 0.5px;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5))
+          drop-shadow(0 0 12px rgba(0, 0, 0, 0.4));
 }
 
 /* About Section */
