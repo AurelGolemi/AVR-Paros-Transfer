@@ -16,7 +16,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 html {
@@ -128,6 +127,7 @@ select:hover {
   cursor: pointer;
   padding: 0.5rem;
   gap: 0.4rem;
+  z-index: 999;
 }
 
 .menu-toggle span {
@@ -136,6 +136,7 @@ select:hover {
   background-color: var(--primary-gold);
   border-radius: 2px;
   transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .menu-toggle.active span:nth-child(1) {
