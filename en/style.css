@@ -206,7 +206,7 @@ section:nth-child(8) {
   text-align: center;
   min-height: 90vh;
   background:
-    url('../Public/Paros_Island/Paros_4.jpeg') no-repeat center center/cover;
+    url('Public/Paros_Island/Paros_4.jpeg') no-repeat center center/cover;
   position: relative;
 }
 
@@ -597,6 +597,24 @@ section:nth-child(8) {
   #Home {
     padding: 3rem 5%;
   }
+}
+
+@media (max-width: 968px) {
+  #Citroen-DS,
+  #Nissan-NV300 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #Citroen-DS > :not(img),
+  #Nissan-NV300 > :not(img) {
+    grid-column: 1;
+  }
+  #Citroen-DS img,
+  #Nissan-NV300 img {
+    grid-column: 1;
+    grid-row: auto;
+  } 
 }
 
 /* Scroll Animations */
