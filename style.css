@@ -21,6 +21,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -128,6 +129,7 @@ select {
   background-position: right 0.75rem center;
   background-size: 1.25rem;
   padding-right: 2.5rem;
+  scroll-margin-top: 100px;
 }
 
 select:hover {
