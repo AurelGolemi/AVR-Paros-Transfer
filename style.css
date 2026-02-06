@@ -572,8 +572,9 @@ section:nth-child(8) {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
   background: var(--dark-bg);
+  padding: 0 1.5rem;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
@@ -585,6 +586,7 @@ section:nth-child(8) {
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1rem;
+  margin: 0;
 }
 
 @media (max-width: 640px) {
@@ -597,6 +599,10 @@ section:nth-child(8) {
     width: 1.75rem;
     height: 1.75rem;
     font-size: 1.2rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.2rem;
   }
 
   .faq-item.active .faq-answer {
