@@ -507,24 +507,99 @@ section:nth-child(8) {
   text-align: center;
 }
 
-#FAQ ul {
-  list-style: none;
+.faq-container {
   max-width: 900px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-#FAQ li {
-  padding: 1rem 0;
+.faq-item {
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--dark-elevated);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  background: var(--dark-elevated);
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.faq-question:hover {
+  background: var(--dark-surface);
+}
+
+.faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--primary-gold-light);
+  color: var(--dark-bg);
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+  background: var(--primary-platinum);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--dark-bg);
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-answer p {
   color: var(--text-secondary);
   line-height: 1.8;
+  font-size: 1rem;
 }
 
-#FAQ strong {
-  color: var(--text-primary);
-  font-size: 1.2rem;
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+@media (max-width: 640px) {
+  .faq-question {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .faq-toggle {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 1.2rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 1.2rem 1.2rem 1.2rem;
+  }
 }
 
 /* Contact Section */
