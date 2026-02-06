@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
 
 :root {
-  --primary-gold: #d4af37;
+  --primary-platinum: #f0f0f0;
   --primary-gold-light: #e8c968;
   --dark-bg: #0a0a0a;
   --dark-surface: #151515;
@@ -9,7 +9,7 @@
   --text-primary: #f5f5f5;
   --text-secondary: #dedede;
   --text-muted: #6b6b6b;
-  --accent-gradient: linear-gradient(135deg, #d4af37 0%, #e8c968 100%);
+  --accent-gradient: linear-gradient(135deg, #f0f0f0 0%, #e8c968 100%);
 }
 
 * {
@@ -60,8 +60,8 @@ header {
 }
 
 header img {
-  height: 70px;
-  width: 100px;
+  height: 60px;
+  width: auto;
   filter: brightness(1.2);
   transition: transform 0.3s ease;
 }
@@ -72,8 +72,8 @@ header img:hover {
 
 @media (max-width: 640px) {
   header img {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: auto;
   }
 }
 
@@ -105,13 +105,14 @@ header ul a::after {
 }
 
 header ul a:hover {
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
 }
 
 header ul a:hover::after {
   width: 100%;
 }
 
+/* Language Select Dropdown */
 select {
   background: var(--dark-elevated);
   color: var(--text-primary);
@@ -121,10 +122,39 @@ select {
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f0f0f0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
 }
 
 select:hover {
-  border-color: var(--primary-gold);
+  border-color: var(--primary-platinum);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-gold-light);
+  box-shadow: 0 0 0 3px rgba(232, 201, 104, 0.1);
+}
+
+/* Mobile specific improvements for select */
+@media (max-width: 640px) {
+  select {
+    padding: 0.6rem 0.8rem;
+    padding-right: 2.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  select {
+    padding: 0.6rem 0.8rem;
+    padding-right: 2.2rem;
+    font-size: 1rem;
+  }
 }
 
 .menu-toggle {
@@ -141,7 +171,7 @@ select:hover {
 .menu-toggle span {
   width: 25px;
   height: 3px;
-  background-color: var(--primary-gold);
+  background-color: var(--primary-platinum);
   border-radius: 2px;
   transition: all 0.3s ease;
   z-index: 999;
@@ -215,8 +245,8 @@ section:nth-child(8) {
   align-items: center;
   text-align: center;
   min-height: 90vh;
-  background:
-    url('../Public/Paros_Island/Paros_4.jpeg') no-repeat center center/cover;
+  background: url("../Public/Paros_Island/Paros_4.jpeg") no-repeat center
+    center/cover;
   position: relative;
 }
 
@@ -239,7 +269,7 @@ section:nth-child(8) {
   font-family: "Playfair Display", serif;
   font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 600;
-  background: var(--primary-gold);
+  background: var(--primary-platinum);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -248,7 +278,7 @@ section:nth-child(8) {
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))
-          drop-shadow(0 0 15px rgba(0, 0, 0, 0.2));
+    drop-shadow(0 0 15px rgba(0, 0, 0, 0.2));
 }
 
 #Home p {
@@ -260,7 +290,7 @@ section:nth-child(8) {
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5))
-          drop-shadow(0 0 12px rgba(0, 0, 0, 0.4));
+    drop-shadow(0 0 12px rgba(0, 0, 0, 0.4));
 }
 
 /* About Section */
@@ -273,7 +303,7 @@ section:nth-child(8) {
 .about-title {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   margin-bottom: 3rem;
   position: relative;
   display: inline-block;
@@ -306,7 +336,7 @@ section:nth-child(8) {
 #Services h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3.5rem);
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -352,7 +382,7 @@ section:nth-child(8) {
 
 #Services li:hover {
   transform: translateY(-5px);
-  border-color: var(--primary-gold);
+  border-color: var(--primary-platinum);
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
 }
 
@@ -389,7 +419,7 @@ section:nth-child(8) {
 #Nissan-NV300 strong {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   display: block;
   margin-bottom: 1rem;
 }
@@ -426,7 +456,7 @@ section:nth-child(8) {
   content: "●";
   position: absolute;
   left: 0;
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
 }
 
 /* Cancellation Policy */
@@ -437,7 +467,7 @@ section:nth-child(8) {
 #Cancellation-Policy h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -452,7 +482,7 @@ section:nth-child(8) {
   padding: 1.5rem;
   margin-bottom: 1rem;
   background: var(--dark-surface);
-  border-left: 4px solid var(--primary-gold);
+  border-left: 4px solid var(--primary-gold-light);
   border-radius: 4px;
   color: var(--text-secondary);
   transition: all 0.3s ease;
@@ -472,7 +502,7 @@ section:nth-child(8) {
 #FAQ h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -491,7 +521,7 @@ section:nth-child(8) {
 
 #FAQ strong {
   color: var(--text-primary);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -510,7 +540,7 @@ section:nth-child(8) {
 #Contact h2 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   margin-bottom: 2rem;
 }
 
@@ -529,7 +559,7 @@ section:nth-child(8) {
   padding: 1.5rem;
   margin-bottom: 1rem;
   background: var(--dark-surface);
-  border-left: 4px solid var(--primary-gold);
+  border-left: 4px solid var(--primary-gold-light);
   border-radius: 4px;
   color: var(--text-secondary);
   transition: all 0.3s ease;
@@ -541,7 +571,7 @@ section:nth-child(8) {
 }
 
 #Contact li a {
-  color: var(--primary-gold);
+  color: var(--primary-platinum);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -628,7 +658,7 @@ section:nth-child(8) {
   #Nissan-NV300 img {
     grid-column: 1;
     grid-row: auto;
-  } 
+  }
 }
 
 /* Scroll Animations */
@@ -643,4 +673,86 @@ section:nth-child(8) {
 .fade-in-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Sticky Contact Button */
+.contact-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-gold-light);
+  color: var(--dark-bg);
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 900;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 201, 104, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background: var(--primary-platinum);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(232, 201, 104, 0.5);
+}
+
+.contact-button:active {
+  transform: translateY(-1px);
+}
+
+/* Sticky Up Button */
+.up-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary-gold-light);
+  color: var(--dark-bg);
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  z-index: 900;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(232, 201, 104, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.up-button:hover {
+  background: var(--primary-platinum);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(232, 201, 104, 0.5);
+}
+
+.up-button:active {
+  transform: translateY(-1px);
+}
+
+/* Mobile responsive floating buttons */
+@media (max-width: 640px) {
+  .contact-button {
+    bottom: 1.5rem;
+    left: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .up-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.2rem;
+  }
 }

@@ -64,3 +64,15 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Scroll to top button
+const upButton = document.getElementById("upButton");
+
+if (upButton) {
+  upButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
