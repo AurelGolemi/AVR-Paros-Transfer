@@ -30,7 +30,11 @@
     </button>
     <ul class="nav-menu" id="navMenu">
       <a href="#Home">Αρχική</a>
-      <a href="#Services">Υπηρεσίες</a>
+      <a href="#Services"><select name="Services" id="Services">
+          <option value="Services">Υπηρεσίες</option>
+          <option value="Tours">Περιηγήσεις</option>
+        </select></a>
+      <a href="#Fleet">Ο Στόλος μας</a>
       <a href="#About">Για εμάς</a>
       <a href="#Contact">Επικοινωνία</a>
     </ul>
@@ -68,17 +72,58 @@
 
     <section id="Nissan-NV300">
       <p>
-        <strong>Nissan NV300</strong> Χωριτηκότητα: 8 ενήλικες + 8 αποσκευές (μπορέι και 10 άμα είναι μικρές)<br>
-      <ul>
-        Παροχές:
-        <li>Άνεση</li>
-        <li>Φιλικό περιβάλλον</li>
-        <li>Ασφαλής Οδήγηση</li>
-        <li>Κλιματισμός</li>
-        <li>Δυνατότητα για παιδικό κάθισμα (baby seat)</li>
-      </ul>
+        <strong>Nissan NV300</strong> Χωριτηκότητα: 8 ενήλικες + 8 αποσκευές (μπορέι και 10 άμα είναι μικρές)
       </p>
       <img src="Public/Cars/Nissan_NV300_1.jpeg" alt="Nissan NV300">
+    </section>
+
+    <section id="allowances" class="allowances-section">
+      <h3>Παροχές</h3>
+      <ul class="allowances-list">
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Άνεση</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Φιλικό περιβάλλον</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Ασφαλής Οδήγηση</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Κλιματισμός</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Δυνατότητα για παιδικό κάθισμα (baby seat)</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="Tours" class="tours-section">
+      <div class="tours-grid">
+        <img class="tours-image" src="Public/Paros_Island/Tours_1.jpeg" alt="Περιηγήσεις">
+        <div class="tours-body">
+          <h2>Περιηγήσεις</h2>
+          <p>
+            Ταξιδέψτε μαζί μας και αφήστε μας να σας οδηγήσουμε στα ομορφότερα μέρη της Πάρου. Ανακαλύψτε τη Νάουσα με
+            τη refined ατμόσφαιρα και τα κομψά, λευκά σοκάκια της. Επισκεφθείτε τις Λεύκες, ένα παραδοσιακό χωριό γνωστό
+            για τα αυθεντικά καφενεία και τη διαχρονική του γοητεία. Περιηγηθείτε στην Παροικιά και εξερευνήστε την
+            ιστορική Παναγία της Εκατονταπυλιανής, έναν από τους παλαιότερους ναούς της Ελλάδας, μέσα από όμορφα, στενά
+            δρομάκια. Αφεθείτε σε exclusive γευσιγνωσία κρασιού στα τοπικά οινοποιεία και απολαύστε μια πραγματικά
+            αξέχαστη εμπειρία ιππασίας, την ώρα της ανατολής ή της δύσης του ηλίου, ζώντας τη μαγεία του νησιού.
+          </p>
+          <ul class="tours-features">
+            <li>Private guided tours</li>
+            <li>Local winery visits</li>
+            <li>Sunrise / sunset horse riding</li>
+          </ul>
+          <a href="#Contact" class="tours-cta">Book a tour</a>
+        </div>
+      </div>
     </section>
 
     <section id="About">
@@ -182,7 +227,7 @@
   </main>
   <a href="#Contact" class="contact-button" aria-label="Go to contact section">
     <span>📞</span>
-    <span>Contact</span>
+    <span>Επικοινωνία</span>
   </a>
   <button class="up-button" id="upButton" aria-label="Go to top of page">
     <span>↑</span>
