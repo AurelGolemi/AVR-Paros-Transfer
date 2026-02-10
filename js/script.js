@@ -106,18 +106,3 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelector('.instagram-link').addEventListener('click', function (e) {
-  e.preventDefault();
-
-  const appLink = 'instagram://user?username=avr.parostransfer';
-  const webLink = 'https://www.instagram.com/avr.parostransfer/';
-
-  // Try to open the app
-  window.location = appLink;
-
-  // Fallback to web
-  setTimeout(() => {
-    window.location.href = webLink;
-  }, 800);
-});
-
