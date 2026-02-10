@@ -105,3 +105,24 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.querySelectorAll('.instagram-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    const username = link.dataset.username;
+
+    // Deep link (opens app if installed)
+    const appLink = `instagram://user?username=${username}`;
+    const webLink = `https://www.instagram.com/${username}/`;
+
+    // Attempt app open
+    window.location.href = appLink;
+
+    // Fallback after delay
+    setTimeout(() => {
+      window.location.href = webLink;
+    }, 700);
+  });
+});
+
