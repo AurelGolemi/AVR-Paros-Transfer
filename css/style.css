@@ -808,6 +808,35 @@ section:nth-child(8) {
   transition: all 0.3s ease;
 }
 
+/* Ensure the question text always aligns left and takes available space
+   so all FAQ items render consistently */
+.faq-question > span:first-child {
+  flex: 1 1 auto;
+  display: block;
+  text-align: left;
+}
+
+/* Guarantee toggle sizing/spacing is consistent across items */
+.faq-toggle {
+  flex: 0 0 2rem;
+  box-sizing: border-box;
+  margin-left: 1rem;
+}
+
+/* More specific rules to override any unexpected centering */
+.faq-question span:not(.faq-toggle) {
+  flex: 1 1 auto;
+  display: block;
+  text-align: left;
+}
+
+.faq-question .faq-toggle {
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+}
+
 .faq-item.active .faq-toggle {
   transform: rotate(45deg);
   background: var(--primary-platinum);
@@ -1226,7 +1255,7 @@ footer p span {
     font-size: 0.85rem;
   }
 }
-    /* width: 2.75rem;
+/* width: 2.75rem;
     height: 2.75rem;
     font-size: 1.2rem;
   }
