@@ -2,16 +2,24 @@ const languageSelect = document.getElementById("languages");
 
 languageSelect.addEventListener("change", (e) => {
   const selectedLang = e.target.value;
+  const currentPath = window.location.pathname;
 
+  let newPath;
+  
   if (selectedLang === "English") {
-    // Navigate to English version
-    window.location.href = "./en/index.html";
+    // Add /en/ if not already there
+    if (currentPath.includes("/en/")) {
+      newPath = currentPath; // Already in English
+    } else {
+      // Insert /en/ after the domain
+      newPath = "/en" + currentPath;
+    }
   } else if (selectedLang === "Greek") {
-    // Navigate back to Greek version (root)
-    window.location.href = "../index.html";
+    // Remove /en/ if present
+    newPath = currentPath.replace("/en/", "/");
   }
 
-  // Save preference
+  window.location.href = newPath;
   localStorage.setItem("preferredLanguage", selectedLang);
 });
 

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AVR Paros Transfer | Ιδιωτικές Μεταφορές στην Πάρο</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <meta name="robots" content="index, follow">
 
@@ -30,11 +30,15 @@
     </button>
     <ul class="nav-menu" id="navMenu">
       <a href="#Home">Αρχική</a>
-      <a href="#Services"><select name="Services" id="Services">
-          <option value="Services">Υπηρεσίες</option>
-          <option value="Tours">Περιηγήσεις</option>
-        </select></a>
-      <a href="#Fleet">Ο Στόλος μας</a>
+      <a href="#Services">Υπηρεσίες</a>
+
+      <!-- <select onchange="if(this.value) window.location.href=this.value" class="services-dropdown" aria-label="Select a service">
+        <option value="#Services">Υπηρεσίες</option>
+        <option value="/Services/Tours/">Περιηγήσεις</option>
+      </select> -->
+
+      <a href="/Fleet/fleet.html">Ο Στόλος μας</a>
+      <a href="/Tours/tours.html">Περιηγήσεις</a>
       <a href="#About">Για εμάς</a>
       <a href="#Contact">Επικοινωνία</a>
     </ul>
@@ -61,69 +65,6 @@
         <li>Άριστη γνώση της Πάρου</li>
         <li>Διαθεσιμότητα κατόπιν συνεννόησης</li>
       </ul>
-    </section>
-
-    <section id="Citroen-DS">
-      <p>
-        <strong>Citroen DS</strong> Χωριτηκότητα: 4 ενήλικες + 4 αποσκευές
-      </p>
-      <img src="Public/Cars/Citroen_DS_2.jpeg" alt="Citroen DS">
-    </section>
-
-    <section id="Nissan-NV300">
-      <p>
-        <strong>Nissan NV300</strong> Χωριτηκότητα: 8 ενήλικες + 8 αποσκευές (μπορέι και 10 άμα είναι μικρές)
-      </p>
-      <img src="Public/Cars/Nissan_NV300_1.jpeg" alt="Nissan NV300">
-    </section>
-
-    <section id="allowances" class="allowances-section">
-      <h3>Παροχές</h3>
-      <ul class="allowances-list">
-        <li>
-          <span class="allowance-icon">✓</span>
-          <span class="allowance-text">Άνεση</span>
-        </li>
-        <li>
-          <span class="allowance-icon">✓</span>
-          <span class="allowance-text">Φιλικό περιβάλλον</span>
-        </li>
-        <li>
-          <span class="allowance-icon">✓</span>
-          <span class="allowance-text">Ασφαλής Οδήγηση</span>
-        </li>
-        <li>
-          <span class="allowance-icon">✓</span>
-          <span class="allowance-text">Κλιματισμός</span>
-        </li>
-        <li>
-          <span class="allowance-icon">✓</span>
-          <span class="allowance-text">Δυνατότητα για παιδικό κάθισμα (baby seat)</span>
-        </li>
-      </ul>
-    </section>
-
-    <section id="Tours" class="tours-section">
-      <div class="tours-grid">
-        <img class="tours-image" src="Public/Paros_Island/Tours_1.jpeg" alt="Περιηγήσεις">
-        <div class="tours-body">
-          <h2>Περιηγήσεις</h2>
-          <p>
-            Ταξιδέψτε μαζί μας και αφήστε μας να σας οδηγήσουμε στα ομορφότερα μέρη της Πάρου. Ανακαλύψτε τη Νάουσα με
-            τη refined ατμόσφαιρα και τα κομψά, λευκά σοκάκια της. Επισκεφθείτε τις Λεύκες, ένα παραδοσιακό χωριό γνωστό
-            για τα αυθεντικά καφενεία και τη διαχρονική του γοητεία. Περιηγηθείτε στην Παροικιά και εξερευνήστε την
-            ιστορική Παναγία της Εκατονταπυλιανής, έναν από τους παλαιότερους ναούς της Ελλάδας, μέσα από όμορφα, στενά
-            δρομάκια. Αφεθείτε σε exclusive γευσιγνωσία κρασιού στα τοπικά οινοποιεία και απολαύστε μια πραγματικά
-            αξέχαστη εμπειρία ιππασίας, την ώρα της ανατολής ή της δύσης του ηλίου, ζώντας τη μαγεία του νησιού.
-          </p>
-          <ul class="tours-features">
-            <li>Ιδιωτικές ξεναγήσεις</li>
-            <li>Επισκέψεις σε τοπικό οινοποιείο</li>
-            <li>Ιππασία με ανατολή / δύση του ηλίου</li>
-          </ul>
-          <a href="#Contact" class="tours-cta">Κάντε κράτηση για μια περιήγηση</a>
-        </div>
-      </div>
     </section>
 
     <section id="About">
@@ -205,26 +146,33 @@
       <ul>
         <li>
           <a href="mailto:avrparostransfer@gmail.com" class="email-link">
-            Email: avrparostransfer@gmail.com
+            <img src="Public/Contacts_Logos/gmail.png" alt="Gmail Logo">
+            <span>Email: avrparostransfer@gmail.com</span>
           </a>
         </li>
         <li>
           <a href="viber://chat?number=+306985804877">
-            Viber: +30 698 580 4877
+            <img src="Public/Contacts_Logos/viber.png" alt="Viber Logo">
+            <span>Viber: +30 698 580 4877</span>
           </a>
         </li>
         <li>
           <a href="https://wa.me/+306985804877" target="_blank">
-            WhatsApp: +30 698 580 4877
+            <img src="Public/Contacts_Logos/whatsapp.png" alt="WhatsApp Logo">
+            <span>WhatsApp: +30 698 580 4877</span>
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/avr.parostransfer/">
-            Instagram: @avr.parostransfer
+            <img src="Public/Contacts_Logos/instagram.png" alt="Instagram Logo">
+            <span>Instagram: @avr.parostransfer</span>
           </a>
         </li>
       </ul>
+    </section>
   </main>
+
+
   <a href="#Contact" class="contact-button" aria-label="Go to contact section">
     <span>📞</span>
     <span>Επικοινωνία</span>
@@ -232,7 +180,74 @@
   <button class="up-button" id="upButton" aria-label="Go to top of page">
     <span>↑</span>
   </button>
-  <script src="script.js"></script>
+  <footer>
+    <p><span>&copy;</span> 2026 AVR Paros Transfer. All rights reserved.</p>
+  </footer>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
+
+
+<!-- <section id="Citroen-DS">
+      <p>
+        <strong>Citroen DS</strong> Χωριτηκότητα: 4 ενήλικες + 4 αποσκευές
+      </p>
+      <img src="Public/Cars/Citroen_DS_2.jpeg" alt="Citroen DS">
+    </section>
+
+    <section id="Nissan-NV300">
+      <p>
+        <strong>Nissan NV300</strong> Χωριτηκότητα: 8 ενήλικες + 8 αποσκευές (μπορέι και 10 άμα είναι μικρές)
+      </p>
+      <img src="Public/Cars/Nissan_NV300_1.jpeg" alt="Nissan NV300">
+    </section>
+
+    <section id="allowances" class="allowances-section">
+      <h3>Παροχές</h3>
+      <ul class="allowances-list">
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Άνεση</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Φιλικό περιβάλλον</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Ασφαλής Οδήγηση</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Κλιματισμός</span>
+        </li>
+        <li>
+          <span class="allowance-icon">✓</span>
+          <span class="allowance-text">Δυνατότητα για παιδικό κάθισμα (baby seat)</span>
+        </li>
+      </ul>
+    </section> -->
+
+<!-- <section id="Tours" class="tours-section">
+      <div class="tours-grid">
+        <img class="tours-image" src="Public/Paros_Island/Tours_1.jpeg" alt="Περιηγήσεις">
+        <div class="tours-body">
+          <h2>Περιηγήσεις</h2>
+          <p>
+            Ταξιδέψτε μαζί μας και αφήστε μας να σας οδηγήσουμε στα ομορφότερα μέρη της Πάρου. Ανακαλύψτε τη Νάουσα με
+            τη refined ατμόσφαιρα και τα κομψά, λευκά σοκάκια της. Επισκεφθείτε τις Λεύκες, ένα παραδοσιακό χωριό γνωστό
+            για τα αυθεντικά καφενεία και τη διαχρονική του γοητεία. Περιηγηθείτε στην Παροικιά και εξερευνήστε την
+            ιστορική Παναγία της Εκατονταπυλιανής, έναν από τους παλαιότερους ναούς της Ελλάδας, μέσα από όμορφα, στενά
+            δρομάκια. Αφεθείτε σε exclusive γευσιγνωσία κρασιού στα τοπικά οινοποιεία και απολαύστε μια πραγματικά
+            αξέχαστη εμπειρία ιππασίας, την ώρα της ανατολής ή της δύσης του ηλίου, ζώντας τη μαγεία του νησιού.
+          </p>
+          <ul class="tours-features">
+            <li>Ιδιωτικές ξεναγήσεις</li>
+            <li>Επισκέψεις σε τοπικό οινοποιείο</li>
+            <li>Ιππασία με ανατολή / δύση του ηλίου</li>
+          </ul>
+          <a href="#Contact" class="tours-cta">Κάντε κράτηση για μια περιήγηση</a>
+        </div>
+      </div>
+    </section> -->
