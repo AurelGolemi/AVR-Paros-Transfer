@@ -106,23 +106,18 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.querySelectorAll('.instagram-link').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
+document.querySelector('.instagram-link').addEventListener('click', function (e) {
+  e.preventDefault();
 
-    const username = link.dataset.username;
+  const appLink = 'instagram://user?username=avr.parostransfer';
+  const webLink = 'https://www.instagram.com/avr.parostransfer/';
 
-    // Deep link (opens app if installed)
-    const appLink = `instagram://user?username=${username}`;
-    const webLink = `https://www.instagram.com/${username}/`;
+  // Try to open the app
+  window.location = appLink;
 
-    // Attempt app open
-    window.location.href = appLink;
-
-    // Fallback after delay
-    setTimeout(() => {
-      window.location.href = webLink;
-    }, 700);
-  });
+  // Fallback to web
+  setTimeout(() => {
+    window.location.href = webLink;
+  }, 800);
 });
 
